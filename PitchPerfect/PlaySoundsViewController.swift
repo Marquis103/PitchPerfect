@@ -27,12 +27,12 @@ class PlaySoundsViewController: UIViewController {
     audioEngine.attachNode(audioPlayer)
     audioEngine.attachNode(timePitch)
     
-    audioFile = try! AVAudioFile(forReading: receiveAudio.filePathUrl)
+    audioFile = try! AVAudioFile(forReading: receiveAudio.filePathUrl, commonFormat: .PCMFormatFloat32, interleaved: false)
     
   }
   
   func startAudioEngine(withRate rate:Float, usingPitch pitch:Float? = 1.0) {
-    selectedButton?.enabled = false
+    selectedButton?.userInteractionEnabled = false
     
     timePitch.pitch = pitch!
     timePitch.rate = rate
@@ -41,7 +41,7 @@ class PlaySoundsViewController: UIViewController {
     audioEngine.connect(timePitch, to: audioEngine.outputNode, format: nil)
     
     audioPlayer.scheduleFile(audioFile, atTime: nil) { () -> Void in
-        self.selectedButton?.enabled = true
+      self.selectedButton?.userInteractionEnabled = true
     }
     
     try! audioEngine.start()

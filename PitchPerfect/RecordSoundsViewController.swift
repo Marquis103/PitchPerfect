@@ -43,17 +43,14 @@ class RecordSoundsViewController: UIViewController {
 
   @IBAction func recordAudio(sender: UIButton) {
     let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-    let currentDateTime = NSDate()
-    let formatter = NSDateFormatter()
-    formatter.dateFormat = "ddMMyyyy-HHmmss"
-    let recordingName = "myaudio.wav"//formatter.stringFromDate(currentDateTime) + ".wav"
+    let recordingName = "myaudio.wav"
     let pathArray = [dirPath, recordingName]
     let filePath = NSURL.fileURLWithPathComponents(pathArray)
     
     let session = AVAudioSession.sharedInstance()
     try! session.setCategory(AVAudioSessionCategoryPlayAndRecord)
     try! session.overrideOutputAudioPort(.Speaker)
-    try! audioRecorder = AVAudioRecorder(URL: filePath!, settings: [:])
+    try! audioRecorder = AVAudioRecorder(URL: filePath!, settings: [AVNumberOfChannelsKey : NSNumber(int: 1)])
     audioRecorder.meteringEnabled = true
     audioRecorder.prepareToRecord()
     audioRecorder.record()
@@ -88,3 +85,7 @@ extension RecordSoundsViewController : AVAudioRecorderDelegate {
   }
 }
 
+//[AVSampleRateKey : NSNumber(float: Float(44100.0)),
+//  AVFormatIDKey : NSNumber(int: Int32(kAudioFormatMPEG4AAC)),
+//  AVNumberOfChannelsKey : NSNumber(int: 1),
+//  AVEncoderAudioQualityKey : NSNumber(int: Int32(AVAudioQuality.Medium.rawValue))]
