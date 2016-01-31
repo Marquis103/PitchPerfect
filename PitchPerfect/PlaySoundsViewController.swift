@@ -32,6 +32,10 @@ class PlaySoundsViewController: UIViewController {
   }
   
   func startAudioEngine(withRate rate:Float, usingPitch pitch:Float? = 1.0) {
+    if audioPlayer.playing {
+      audioPlayer.stop()
+    }
+    
     selectedButton?.userInteractionEnabled = false
     
     timePitch.pitch = pitch!
@@ -56,7 +60,7 @@ class PlaySoundsViewController: UIViewController {
   
   @IBAction func playFastAudio(sender: UIButton) {
     selectedButton = sender
-    startAudioEngine(withRate: 1.5)
+    startAudioEngine(withRate: 2.0)
   }
   
   @IBAction func playSlowAudio(sender: UIButton) {

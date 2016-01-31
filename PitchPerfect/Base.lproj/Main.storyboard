@@ -73,13 +73,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Paw-P4-fKu">
-                                <rect key="frame" x="50" y="114" width="100" height="100"/>
-                                <state key="normal" image="slow"/>
-                                <connections>
-                                    <action selector="playSlowAudio:" destination="nDS-OI-apo" eventType="touchUpInside" id="V4r-IC-r2M"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hci-W0-xn4">
                                 <rect key="frame" x="450" y="114" width="100" height="100"/>
                                 <state key="normal" image="fast"/>
@@ -108,21 +101,73 @@
                                     <action selector="playChipmunkAudio:" destination="nDS-OI-apo" eventType="touchUpInside" id="Hw7-Bt-VN4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Paw-P4-fKu">
+                                <rect key="frame" x="50" y="114" width="100" height="100"/>
+                                <state key="normal" image="slow"/>
+                                <connections>
+                                    <action selector="playSlowAudio:" destination="nDS-OI-apo" eventType="touchUpInside" id="V4r-IC-r2M"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="r3D-X6-HQh" firstAttribute="top" secondItem="Paw-P4-fKu" secondAttribute="bottom" constant="8" symbolic="YES" id="0Af-TR-6OS"/>
                             <constraint firstItem="7fL-CE-ndn" firstAttribute="leading" secondItem="Paw-P4-fKu" secondAttribute="leading" id="3Jh-U6-12S"/>
-                            <constraint firstItem="r3D-X6-HQh" firstAttribute="top" secondItem="7fL-CE-ndn" secondAttribute="bottom" constant="144" id="9Mf-Ka-PXe"/>
+                            <constraint firstItem="7fL-CE-ndn" firstAttribute="bottom" secondItem="so6-j4-gtj" secondAttribute="bottom" id="5Qg-oR-KBH"/>
                             <constraint firstItem="r3D-X6-HQh" firstAttribute="top" secondItem="Yfq-BS-WcE" secondAttribute="bottom" constant="20" id="Aao-tQ-Qtt"/>
+                            <constraint firstItem="r3D-X6-HQh" firstAttribute="top" secondItem="7fL-CE-ndn" secondAttribute="bottom" constant="150" id="JHe-Pt-3j2"/>
                             <constraint firstItem="7fL-CE-ndn" firstAttribute="top" secondItem="so6-j4-gtj" secondAttribute="top" id="MHf-rp-uTr"/>
-                            <constraint firstItem="r3D-X6-HQh" firstAttribute="top" secondItem="so6-j4-gtj" secondAttribute="bottom" constant="144" id="NzB-Jy-XbW"/>
+                            <constraint firstItem="r3D-X6-HQh" firstAttribute="top" secondItem="Hci-W0-xn4" secondAttribute="bottom" constant="29" id="NlN-88-cAO">
+                                <variation key="heightClass=compact" constant="8" symbolic="YES"/>
+                            </constraint>
                             <constraint firstItem="Yfq-BS-WcE" firstAttribute="centerX" secondItem="vCT-Lf-BfJ" secondAttribute="centerX" id="QVh-am-cLe"/>
+                            <constraint firstItem="7fL-CE-ndn" firstAttribute="top" secondItem="IMN-cK-qzR" secondAttribute="bottom" constant="8" symbolic="YES" id="UOz-3v-27o"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Paw-P4-fKu" secondAttribute="leading" constant="-30" id="bIx-Cg-Evc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Hci-W0-xn4" secondAttribute="trailing" constant="30" id="fOs-Qo-oSq"/>
+                            <constraint firstItem="Paw-P4-fKu" firstAttribute="top" secondItem="IMN-cK-qzR" secondAttribute="bottom" constant="150" id="gI4-P6-duS"/>
                             <constraint firstItem="so6-j4-gtj" firstAttribute="trailing" secondItem="Hci-W0-xn4" secondAttribute="trailing" id="hB1-J6-VsI"/>
-                            <constraint firstItem="Paw-P4-fKu" firstAttribute="top" secondItem="IMN-cK-qzR" secondAttribute="bottom" constant="50" id="jIY-c5-Ekx"/>
-                            <constraint firstItem="Hci-W0-xn4" firstAttribute="top" secondItem="Paw-P4-fKu" secondAttribute="top" id="ljd-A8-hCn"/>
+                            <constraint firstItem="7fL-CE-ndn" firstAttribute="top" secondItem="IMN-cK-qzR" secondAttribute="bottom" constant="8" symbolic="YES" id="j2n-iT-EUg"/>
+                            <constraint firstItem="Paw-P4-fKu" firstAttribute="top" secondItem="Hci-W0-xn4" secondAttribute="top" id="uD8-0S-dnr"/>
+                            <constraint firstItem="Paw-P4-fKu" firstAttribute="bottom" secondItem="Hci-W0-xn4" secondAttribute="bottom" id="xm6-KI-Pcb"/>
+                            <constraint firstItem="r3D-X6-HQh" firstAttribute="top" secondItem="Hci-W0-xn4" secondAttribute="bottom" constant="8" symbolic="YES" id="zm5-cp-8LL"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="5Qg-oR-KBH"/>
+                                <exclude reference="UOz-3v-27o"/>
+                                <exclude reference="j2n-iT-EUg"/>
+                                <exclude reference="gI4-P6-duS"/>
+                                <exclude reference="uD8-0S-dnr"/>
+                                <exclude reference="xm6-KI-Pcb"/>
+                                <exclude reference="0Af-TR-6OS"/>
+                                <exclude reference="JHe-Pt-3j2"/>
+                                <exclude reference="NlN-88-cAO"/>
+                                <exclude reference="zm5-cp-8LL"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="5Qg-oR-KBH"/>
+                                <exclude reference="MHf-rp-uTr"/>
+                                <include reference="UOz-3v-27o"/>
+                                <include reference="uD8-0S-dnr"/>
+                                <include reference="NlN-88-cAO"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="constraints">
+                                <include reference="gI4-P6-duS"/>
+                                <include reference="xm6-KI-Pcb"/>
+                                <include reference="JHe-Pt-3j2"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="j2n-iT-EUg"/>
+                                <include reference="0Af-TR-6OS"/>
+                                <include reference="zm5-cp-8LL"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GXA-vC-QO3" userLabel="First Responder" sceneMemberID="firstResponder"/>
